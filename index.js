@@ -75,7 +75,23 @@ const dialogflowFulfillment = (request,response) => {
           return queryDatabase(connection,st)
           .then(result => {
             console.log(result);
-            agent.add(`${disease} của bệnh là : ${name_disease.st}`);
+            if(true)
+            {
+                if(value === "Thông tin")
+                    agent.add(`${disease} của bệnh là : ${name_disease.introduce}`);
+                if(value === "Nguyên nhân")
+                    agent.add(`${disease} của bệnh là : ${name_disease.reason}`);
+                if(value === "Triệu chứng")
+                    agent.add(`${disease} của bệnh là : ${name_disease.symptom}`);
+                if(value === "Ai")
+                    agent.add(`${disease} của bệnh là : ${name_disease.objects}`);
+                if(value === "Phòng ngừa")
+                    agent.add(`${disease} của bệnh là : ${name_disease.prevent}`);
+                if(value === "Chẩn đoán")
+                    agent.add(`${disease} của bệnh là : ${name_disease.diagnose}`);
+                if(value === "Giải pháp")
+                    agent.add(`${disease} của bệnh là : ${name_disease.solution}`);
+            }
             connection.end();
           });
         });
