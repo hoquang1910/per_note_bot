@@ -75,7 +75,7 @@ const dialogflowFulfillment = (request,response) => {
           return queryDatabase(connection,st,name_disease)
           .then(result => {
             console.log(result);
-            if(result[0] !== "")
+            if(result[0] !== null)
             {
                 switch(disease){
                     case "Thông tin":
