@@ -77,20 +77,29 @@ const dialogflowFulfillment = (request,response) => {
             console.log(result);
             if(true)
             {
-                if(disease === "Thông tin")
-                    agent.add(`${disease} của bệnh là : ${result[0].introduce}`);
-                if(disease === "Nguyên nhân")
-                    agent.add(`${disease} của bệnh là : ${result[0].reason}`);
-                if(disease === "Triệu chứng")
-                    agent.add(`${disease} của bệnh là : ${result[0].symptom}`);
-                if(disease === "Ai")
-                    agent.add(`${disease} của bệnh là : ${result[0].objects}`);
-                if(disease === "Phòng ngừa")
-                    agent.add(`${disease} của bệnh là : ${result[0].prevent}`);
-                if(disease === "Chẩn đoán")
-                    agent.add(`${disease} của bệnh là : ${result[0].diagnose}`);
-                if(disease === "Giải pháp")
-                    agent.add(`${disease} của bệnh là : ${result[0].solution}`);
+                switch(disease){
+                    case "Thông tin":
+                        agent.add(`${disease} của bệnh là : ${result[0].introduce}`);
+                        break;
+                    case "Nguyên nhân":
+                        agent.add(`${disease} của bệnh là : ${result[0].reason}`);
+                        break;
+                    case "Triệu chứng":
+                        agent.add(`${disease} của bệnh là : ${result[0].symptom}`);
+                        break;
+                    case "Ai":    
+                        agent.add(`${disease} của bệnh là : ${result[0].objects}`);
+                        break;
+                    case "Phòng ngừa":
+                        agent.add(`${disease} của bệnh là : ${result[0].prevent}`);
+                        break;
+                    case "Chẩn đoán":
+                        agent.add(`${disease} của bệnh là : ${result[0].diagnose}`);
+                        break;
+                    case "Giải pháp":  
+                        agent.add(`${disease} của bệnh là : ${result[0].solution}`); 
+                        break;            
+                }
             }
             connection.end();
           });
