@@ -39,43 +39,51 @@ const dialogflowFulfillment = (request,response) => {
           });
       }
       
-      function queryDatabase(connection){
+      function queryDatabase(connection,value){
         return new Promise((resolve, reject) => {
-          connection.query('Select * from disease', (error, results, fields) => {
+          connection.query(`Select ${value} from disease`, (error, results, fields) => {
             resolve(results);
             
           });
         });
       }
       
-    //   function ChangeValue(value){
-    //     if(value === "Thông tin")
-    //       return "introduce";
-    //     if(value === "Nguyên nhân")
-    //       return "reason";
-    //     if(value === "Triệu chứng")
-    //       return "symptom";
-    //     if(value === "Ai")
-    //       return "objects";
-    //     if(value === "Phòng ngừa")
-    //       return "prevent";
-    //     if(value === "Chẩn đoán")
-    //       return "diagnose";
-    //     if(value === "Giải pháp")
-    //       return "solution";
-    //   }
+      function ChangeValue(value){
+        if(value === "Thông tin")
+          return "introduce";
+        if(value === "Nguyên nhân")
+          return "reason";
+        if(value === "Triệu chứng")
+          return "symptom";
+        if(value === "Ai")
+          return "objects";
+        if(value === "Phòng ngừa")
+          return "prevent";
+        if(value === "Chẩn đoán")
+          return "diagnose";
+        if(value === "Giải pháp")
+          return "solution";
+      }
       
       
        function handleReadFromMySQL(agent){
-        //  const name_disease = agent.parameter.any;
-        //  const disease = agent.parameter.disease;
-        //  const kind = ChangeValue(disease);
+         const name_disease = agent.parameter.any;
+         const disease = agent.parameter.disease;
+         const kind = ChangeValue(disease);
         return connectToDatabase()
         .then(connection => {
-          return queryDatabase(connection)
+          return queryDatabase(connection,kind)
           .then(result => {
             console.log(result);
-            agent.add(` của bệnh là : ${result[0].name_disease}`);
+            result.map(name =>{
+              if(name_disease === name.name_disease)
+              {
+                agent.add(`${disease} của bệnh là : ${name.kind}`);
+              }
+              else{
+                  agent.add('a');
+              }
+            });
             connection.end();
           });
         });
