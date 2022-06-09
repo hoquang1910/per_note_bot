@@ -78,7 +78,7 @@ const dialogflowFulfillment = (request,response) => {
             result.map(name =>{
               if(name_disease === name.name_disease)
               {
-                agent.add(`${disease} của bệnh là : ${name.name_disease}`);
+                agent.add(`${disease} của bệnh là : ${name.st}`);
               }
             });
             connection.end();
