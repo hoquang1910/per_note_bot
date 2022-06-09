@@ -77,19 +77,19 @@ const dialogflowFulfillment = (request,response) => {
             console.log(result);
             if(true)
             {
-                if(value === "Thông tin")
+                if(disease === "Thông tin")
                     agent.add(`${disease} của bệnh là : ${name_disease.introduce}`);
-                if(value === "Nguyên nhân")
+                if(disease === "Nguyên nhân")
                     agent.add(`${disease} của bệnh là : ${name_disease.reason}`);
-                if(value === "Triệu chứng")
+                if(disease === "Triệu chứng")
                     agent.add(`${disease} của bệnh là : ${name_disease.symptom}`);
-                if(value === "Ai")
+                if(disease === "Ai")
                     agent.add(`${disease} của bệnh là : ${name_disease.objects}`);
-                if(value === "Phòng ngừa")
+                if(disease === "Phòng ngừa")
                     agent.add(`${disease} của bệnh là : ${name_disease.prevent}`);
-                if(value === "Chẩn đoán")
+                if(disease === "Chẩn đoán")
                     agent.add(`${disease} của bệnh là : ${name_disease.diagnose}`);
-                if(value === "Giải pháp")
+                if(disease === "Giải pháp")
                     agent.add(`${disease} của bệnh là : ${name_disease.solution}`);
             }
             connection.end();
