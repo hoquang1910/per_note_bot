@@ -75,7 +75,7 @@ const dialogflowFulfillment = (request,response) => {
           return queryDatabase(connection,st,name_disease)
           .then(result => {
             console.log(result);
-            if(result != null)
+            if(result[0] !== "")
             {
                 switch(disease){
                     case "Thông tin":
@@ -103,7 +103,7 @@ const dialogflowFulfillment = (request,response) => {
             }
             else
             {
-                agent.add('Chúng tôi sẽ cập nhật sau. Hiện chưa có thông tin về bệnh')
+                agent.add('Hiện tại chưa có thông tin về bệnh!')
             }
             connection.end();
           });
