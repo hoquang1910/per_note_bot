@@ -67,8 +67,8 @@ const dialogflowFulfillment = (request,response) => {
       
       
        function handleReadFromMySQL(agent){
-         const name_disease = agent.parameter.any;
-         const disease = agent.parameter.disease;
+         const name_disease = agent.parameter.any.value;
+         const disease = agent.parameter.disease.value;
          const kind = ChangeValue(disease);
         return connectToDatabase()
         .then(connection => {
