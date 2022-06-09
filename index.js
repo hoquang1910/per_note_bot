@@ -50,19 +50,19 @@ const dialogflowFulfillment = (request,response) => {
       
       function ChangeValue(value){
         if(value === "Thông tin")
-          return "introduce";
+          return `introduce`;
         if(value === "Nguyên nhân")
-          return "reason";
+          return `reason`;
         if(value === "Triệu chứng")
-          return "symptom";
+          return `symptom`;
         if(value === "Ai")
-          return "objects";
+          return `objects`;
         if(value === "Phòng ngừa")
-          return "prevent";
+          return `prevent`;
         if(value === "Chẩn đoán")
-          return "diagnose";
+          return `diagnose`;
         if(value === "Giải pháp")
-          return "solution";
+          return `solution`;
       }
       
       
