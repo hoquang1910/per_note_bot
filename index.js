@@ -39,9 +39,9 @@ const dialogflowFulfillment = (request,response) => {
           });
       }
       
-      function queryDatabase(connection,value){
+      function queryDatabase(connection,kind,value){
         return new Promise((resolve, reject) => {
-          connection.query(`Select ${value} from disease`, (error, results, fields) => {
+          connection.query(`Select ${kind} from disease where name_disease = '${value}'`, (error, results, fields) => {
             resolve(results);
             
           });
@@ -72,26 +72,10 @@ const dialogflowFulfillment = (request,response) => {
          const st = ChangeValue(disease);
         return connectToDatabase()
         .then(connection => {
-          return queryDatabase(connection,st)
+          return queryDatabase(connection,st,name_disease)
           .then(result => {
             console.log(result);
-            if(true)
-            {
-                if(disease === "Thông tin")
-                    agent.add(`${name_disease} của bệnh là : ${name_disease.introduce}`);
-                if(disease === "Nguyên nhân")
-                    agent.add(`${disease} của bệnh là : ${name_disease.reason}`);
-                if(disease === "Triệu chứng")
-                    agent.add(`${disease} của bệnh là : ${name_disease.symptom}`);
-                if(disease === "Ai")
-                    agent.add(`${disease} của bệnh là : ${name_disease.objects}`);
-                if(disease === "Phòng ngừa")
-                    agent.add(`${disease} của bệnh là : ${name_disease.prevent}`);
-                if(disease === "Chẩn đoán")
-                    agent.add(`${disease} của bệnh là : ${name_disease.diagnose}`);
-                if(disease === "Giải pháp")
-                    agent.add(`${disease} của bệnh là : ${name_disease.solution}`);
-            }
+            agent.add(`${disease} của bệnh là : ${result}`);
             connection.end();
           });
         });
