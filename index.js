@@ -78,7 +78,7 @@ const dialogflowFulfillment = (request,response) => {
             if(true)
             {
                 if(disease === "Thông tin")
-                    agent.add(`${disease} của bệnh là : ${name_disease.introduce}`);
+                    agent.add(`${name_disease} của bệnh là : ${name_disease.introduce}`);
                 if(disease === "Nguyên nhân")
                     agent.add(`${disease} của bệnh là : ${name_disease.reason}`);
                 if(disease === "Triệu chứng")
