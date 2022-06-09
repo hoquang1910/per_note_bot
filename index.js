@@ -67,18 +67,18 @@ const dialogflowFulfillment = (request,response) => {
       
       
        function handleReadFromMySQL(agent){
-         const name_disease = agent.parameter.any.value;
-         const disease = agent.parameter.disease.value;
-         const kind = ChangeValue(disease);
+        //  const name_disease = agent.parameter.any;
+        //  const disease = agent.parameter.disease;
+        //  const kind = ChangeValue(disease);
         return connectToDatabase()
         .then(connection => {
-          return queryDatabase(connection,kind)
+          return queryDatabase(connection,'name_disease')
           .then(result => {
             console.log(result);
             result.map(name =>{
               if(name_disease === name.name_disease)
               {
-                agent.add(`${disease} của bệnh là : ${name.kind}`);
+                agent.add(`Nguyên nhân của bệnh là : ${name.name_disease}`);
               }
               else{
                   agent.add('a');
