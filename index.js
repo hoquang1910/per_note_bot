@@ -79,79 +79,25 @@ const dialogflowFulfillment = (request,response) => {
             {
                 switch(disease){
                     case "Thông tin":
-                        if(typeof result[0].introduce !== 'undefined')
-                        {
-                            agent.add(`${disease} của bệnh là : ${result[0].introduce}`);
-                        }
-                        else
-                        {
-                            agent.add('Dữ liệu hiện không có');
-                        }
+                        agent.add(`${disease} của bệnh là : ${result[0].introduce}`);
                         break;
                     case "Nguyên nhân":
-                        if(typeof result[0].introduce !== 'undefined')
-                        {
-                            agent.add(`${disease} của bệnh là : ${result[0].reason}`);
-                        }
-                        else
-                        {
-                            agent.add('Dữ liệu hiện không có');
-                        }
-                        
+                        agent.add(`${disease} của bệnh là : ${result[0].reason}`);
                         break;
                     case "Triệu chứng":
-                        if(typeof result[0].introduce !== 'undefined')
-                        {
-                            agent.add(`${disease} của bệnh là : ${result[0].symptom}`);
-                        }
-                        else
-                        {
-                            agent.add('Dữ liệu hiện không có');
-                        }
-                        
+                        agent.add(`${disease} của bệnh là : ${result[0].symptom}`);
                         break;
-                    case "Ai":   
-                        if(typeof result[0].introduce !== 'undefined')
-                            {
-                                agent.add(`${disease} của bệnh là : ${result[0].objects}`);
-                            }
-                            else
-                            {
-                                agent.add('Dữ liệu hiện không có');
-                            } 
-                        
+                    case "Ai":    
+                        agent.add(`${disease} của bệnh là : ${result[0].objects}`);
                         break;
                     case "Phòng ngừa":
-                        if(typeof result[0].introduce !== 'undefined')
-                        {
-                            agent.add(`${disease} của bệnh là : ${result[0].prevent}`);
-                        }
-                        else
-                        {
-                            agent.add('Dữ liệu hiện không có');
-                        }
-                        
+                        agent.add(`${disease} của bệnh là : ${result[0].prevent}`);
                         break;
                     case "Chẩn đoán":
-                        if(typeof result[0].introduce !== 'undefined')
-                        {
-                            agent.add(`${disease} của bệnh là : ${result[0].diagnose}`);
-                        }
-                        else
-                        {
-                            agent.add('Dữ liệu hiện không có');
-                        }
-                        
+                        agent.add(`${disease} của bệnh là : ${result[0].diagnose}`);
                         break;
-                    case "Giải pháp":
-                        if(typeof result[0].introduce !== 'undefined')
-                        {
-                            agent.add(`${disease} của bệnh là : ${result[0].solution}`); 
-                        }
-                        else
-                        {
-                            agent.add('Dữ liệu hiện không có');
-                        }  
+                    case "Giải pháp":  
+                        agent.add(`${disease} của bệnh là : ${result[0].solution}`); 
                         break;            
                 }
             }
