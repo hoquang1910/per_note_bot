@@ -92,7 +92,7 @@ const dialogflowFulfillment = (request,response) => {
             //     if(disease === "Giải pháp")
             //         agent.add(`${disease} của bệnh là : ${result.solution}`);
             // }
-            agent.add(`${result.reason}`)
+            agent.add(`${result[0].reason}`)
             connection.end();
           });
         });
