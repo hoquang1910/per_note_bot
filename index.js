@@ -75,12 +75,7 @@ const dialogflowFulfillment = (request,response) => {
           return queryDatabase(connection,st)
           .then(result => {
             console.log(result);
-            result.map(name =>{
-              if(name_disease === name.name_disease)
-              {
-                agent.add(`${disease} của bệnh là : ${name.st}`);
-              }
-            });
+            agent.add(`${disease} của bệnh là : ${name_disease.st}`);
             connection.end();
           });
         });
