@@ -57,7 +57,7 @@ const dialogflowFulfillment = (request,response) => {
           return `symptom`;
         if(value === "Ai")
           return `objects`;
-        if(value === "Phòng ngừa")
+        if(value === "Phòng tránh")
           return `prevent`;
         if(value === "Chẩn đoán")
           return `diagnose`;
@@ -90,7 +90,7 @@ const dialogflowFulfillment = (request,response) => {
                     case "Ai":    
                         agent.add(`${disease} của bệnh là : ${result[0].objects}`);
                         break;
-                    case "Phòng ngừa":
+                    case "Phòng tránh":
                         agent.add(`${disease} của bệnh là : ${result[0].prevent}`);
                         break;
                     case "Chẩn đoán":
