@@ -23,9 +23,9 @@ const dialogflowFulfillment = (request,response) => {
     function connectToDatabase(){
         const connection = sql.createConnection({
           host     : 'sql6.freemysqlhosting.net',
-          user     : 'sql6499927',
-          password : '2IRE3I8mAZ',
-          database : 'sql6499927'
+          user     : 'sql6500341',
+          password : 'JNJaIDP3ul',
+          database : 'sql6500341'
         });
         return new Promise((resolve,reject) => {
            connection.connect(function(err) {
