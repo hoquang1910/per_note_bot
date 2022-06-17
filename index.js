@@ -88,13 +88,13 @@ const dialogflowFulfillment = (request,response) => {
                         agent.add(`${disease} của bệnh là : ${result[0].symptom}`);
                         break;
                     case "Ai":    
-                        agent.add(`${disease} của bệnh là : ${result[0].objects}`);
+                        agent.add(`${disease} có thể bị bệnh : ${result[0].objects}`);
                         break;
                     case "Phòng tránh":
-                        agent.add(`${disease} của bệnh là : ${result[0].prevent}`);
+                        agent.add(`${disease} bệnh : ${result[0].prevent}`);
                         break;
                     case "Chẩn đoán":
-                        agent.add(`${disease} của bệnh là : ${result[0].diagnose}`);
+                        agent.add(`${disease} bệnh : ${result[0].diagnose}`);
                         break;
                     case "Giải pháp":  
                         agent.add(`${disease} của bệnh là : ${result[0].solution}`); 
