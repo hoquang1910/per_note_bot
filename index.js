@@ -22,10 +22,10 @@ const dialogflowFulfillment = (request,response) => {
 
     function connectToDatabase(){
         const connection = sql.createConnection({
-          host     : 'sql6.freemysqlhosting.net',
-          user     : 'sql6500368',
-          password : 'M3ymTSB3Ci',
-          database : 'sql6500368'
+          host     : 'phpmyadmin-c011.cloudclusters.net/index.php',
+          user     : 'admin',
+          password : 'NUoK65o2',
+          database : 'CSV_DB.disease'
         });
         return new Promise((resolve,reject) => {
            connection.connect(function(err) {
