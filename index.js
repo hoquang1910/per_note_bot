@@ -78,7 +78,7 @@ const dialogflowFulfillment = (request,response) => {
             console.log(result);
             if(true)
             {
-              console.log("test22222222222222");
+              console.log(disease);
                 switch(disease){
                     case "Thông tin":
                         agent.add(`${disease} của bệnh là : ${result[0].introduce}`);
