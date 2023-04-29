@@ -44,6 +44,7 @@ const dialogflowFulfillment = (request,response) => {
         return new Promise((resolve, reject) => {
           connection.query(`Select ${kind} from disease where name_disease = '${value}'`, (error, results, fields) => {
             resolve(results);
+            console.log(results);
           });
         })
       }
