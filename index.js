@@ -22,7 +22,8 @@ const dialogflowFulfillment = (request,response) => {
 
     function connectToDatabase(){
         const connection = sql.createConnection({
-          host     : 'phpmyadmin-c012.cloudclusters.net',
+          host     : 'mysql-123879-0.cloudclusters.net',
+          port     : 10060,
           user     : 'admin',
           password : 'ZZGmnvkJ',
           database : 'CSV_DB.disease'
