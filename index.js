@@ -26,7 +26,7 @@ const dialogflowFulfillment = (request,response) => {
           port     : '10060',
           user     : 'admin',
           password : 'ZZGmnvkJ',
-          database : 'CSV_DB.disease'
+          database : 'CSV_DB'
         });
         return new Promise((resolve,reject) => {
            connection.connect(function(err) {
