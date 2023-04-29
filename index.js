@@ -42,7 +42,7 @@ const dialogflowFulfillment = (request,response) => {
       
       function queryDatabase(connection,kind,value){
         return new Promise((resolve, reject) => {
-          connection.query(`Select disease.${kind} from disease where disease.name_disease = '${value}'`, (error, results, fields) => {
+          connection.query(`Select ${kind} from disease where name_disease = '${value}'`, (error, results, fields) => {
             resolve(results);
           });
         })
@@ -78,7 +78,6 @@ const dialogflowFulfillment = (request,response) => {
             console.log(result);
             if(true)
             {
-              
                 switch(disease){
                     case "Thông tin":
                         agent.add(`${disease} của bệnh là : ${result[0].introduce}`);
