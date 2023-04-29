@@ -44,7 +44,6 @@ const dialogflowFulfillment = (request,response) => {
         return new Promise((resolve, reject) => {
           connection.query(`Select disease.${kind} from disease where disease.name_disease = '${value}'`, (error, results, fields) => {
             resolve(results);
-            console.log("test11111111111");
           });
         })
       }
@@ -71,6 +70,7 @@ const dialogflowFulfillment = (request,response) => {
          const name_disease = agent.parameters['any'];
          const disease = agent.parameters['disease'];
          const st = ChangeValue(disease);
+         console.log("test11111111111");
         return connectToDatabase()
         .then(connection => {
           return queryDatabase(connection,st,name_disease)
@@ -78,6 +78,7 @@ const dialogflowFulfillment = (request,response) => {
             console.log(result);
             if(true)
             {
+              console.log("test22222222222222");
                 switch(disease){
                     case "Thông tin":
                         agent.add(`${disease} của bệnh là : ${result[0].introduce}`);
