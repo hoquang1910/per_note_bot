@@ -78,7 +78,7 @@ const dialogflowFulfillment = (request,response) => {
             console.log(result);
             if(true)
             {
-              console.log(disease);
+              
                 switch(disease){
                     case "Thông tin":
                         agent.add(`${disease} của bệnh là : ${result[0].introduce}`);
@@ -104,6 +104,7 @@ const dialogflowFulfillment = (request,response) => {
                 }
             }
             connection.end();
+            console.log(disease);
           });
         });
       }
