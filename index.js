@@ -22,9 +22,9 @@ const dialogflowFulfillment = (request,response) => {
 
     function connectToDatabase(){
         const connection = sql.createConnection({
-          host     : 'phpmyadmin-c011.cloudclusters.net/index.php',
+          host     : 'phpmyadmin-c012.cloudclusters.net/index.php',
           user     : 'admin',
-          password : 'NUoK65o2',
+          password : 'ZZGmnvkJ',
           database : 'CSV_DB.disease'
         });
         return new Promise((resolve,reject) => {
