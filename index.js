@@ -41,6 +41,7 @@ const dialogflowFulfillment = (request,response) => {
       }
       
       function queryDatabase(connection,kind,value){
+        console.log("Testttttttt");
         return new Promise((resolve, reject) => {
           connection.query(`Select ${kind} from disease where name_disease = '${value}'`, (error, results, fields) => {
             resolve(results);
