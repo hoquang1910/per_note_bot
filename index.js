@@ -44,11 +44,9 @@ const dialogflowFulfillment = (request,response) => {
         return new Promise((resolve, reject) => {
           connection.query(`Select disease.${kind} from disease where disease.name_disease = '${value}'`, (error, results, fields) => {
             resolve(results);
+            console.log("test11111111111");
           });
-        }).catch((err) => {
-          console.error('Failed to catch.', err);
-          return Promise.reject(err);
-        });
+        })
       }
       
       function ChangeValue(value){
