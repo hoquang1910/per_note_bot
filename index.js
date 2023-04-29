@@ -23,10 +23,10 @@ const dialogflowFulfillment = (request,response) => {
     function connectToDatabase(){
         const connection = sql.createConnection({
           host     : 'mysql-123879-0.cloudclusters.net',
-          port     : 10060,
+          port     : '10060',
           user     : 'admin',
           password : 'ZZGmnvkJ',
-          database : 'disease'
+          database : 'CSV_DB.disease'
         });
         return new Promise((resolve,reject) => {
            connection.connect(function(err) {
