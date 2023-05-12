@@ -22,10 +22,10 @@ const dialogflowFulfillment = (request,response) => {
 
     function connectToDatabase(){
         const connection = sql.createConnection({
-          host     : 'mysql-123879-0.cloudclusters.net',
-          port     : '10060',
+          host     : 'mysql-126023-0.cloudclusters.net',
+          port     : '10114',
           user     : 'admin',
-          password : 'ZZGmnvkJ',
+          password : 'ijuHJwOX',
           database : 'CSV_DB'
         });
         return new Promise((resolve,reject) => {
@@ -99,7 +99,9 @@ const dialogflowFulfillment = (request,response) => {
                         break;
                     case "Giải pháp":  
                         agent.add(`${disease} của bệnh là : ${result[0].solution}`); 
-                        break;            
+                        break;
+                    default:
+                        agent.add(`Hiện tại tôi không có thông tin trên`);            
                 }
             }
             connection.end();
