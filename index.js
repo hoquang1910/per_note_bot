@@ -79,7 +79,7 @@ const dialogflowFulfillment = (request,response) => {
             {
               if(result == [])
               {
-                agent.add('Vui lòng thử lại sau ít phút.');
+                agent.add('Hệ thống lỗi hoặc có thể hiện tại tôi không có thông tin trên. Vui lòng thử lại sau');
               }
                 switch(disease){
                     case "Thông tin":
