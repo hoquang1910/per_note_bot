@@ -69,16 +69,18 @@ const dialogflowFulfillment = (request,response) => {
       
        function handleReadFromMySQL(agent){
          const name_disease = agent.parameters['name'];
-         console.log(name_disease[name_disease.lenghth - 1]);
          const disease = agent.parameters['disease'];
          const st = ChangeValue(disease);
         return connectToDatabase()
         .then(connection => {
           return queryDatabase(connection,st,name_disease)
           .then(result => {
-            console.log(result);
             if(true)
             {
+              if(result == [])
+              {
+                agent.add('Vui lòng thử lại sau ít phút.');
+              }
                 switch(disease){
                     case "Thông tin":
                         agent.add(`${disease} của bệnh là : ${result[0].introduce}`);
@@ -106,7 +108,6 @@ const dialogflowFulfillment = (request,response) => {
                 }
             }
             connection.end();
-            console.log(disease);
           });
         });
       }
