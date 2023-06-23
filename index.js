@@ -22,10 +22,10 @@ const dialogflowFulfillment = (request,response) => {
 
     function connectToDatabase(){
         const connection = sql.createConnection({
-          host     : 'mysql-128590-0.cloudclusters.net',
-          port     : '10071',
+          host     : 'mysql-133023-0.cloudclusters.net',
+          port     : '16830',
           user     : 'admin',
-          password : 'Z9p0L4Zp',
+          password : 'YDJbp1Xx',
           database : 'CSV_DB'
         });
         return new Promise((resolve,reject) => {
@@ -44,7 +44,6 @@ const dialogflowFulfillment = (request,response) => {
         return new Promise((resolve, reject) => {
           connection.query(`Select ${kind} from disease where name_disease = '${value}'`, (error, results, fields) => {
             resolve(results);
-            console.log(`Select ${kind} from disease where name_disease = '${value}'`);
           });
         })
       }
